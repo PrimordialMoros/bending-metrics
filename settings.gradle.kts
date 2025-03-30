@@ -1,2 +1,2 @@
-rootProject.name = "EarthDome"
+rootProject.name = "bending-metrics"
 
