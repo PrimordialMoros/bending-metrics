@@ -12,11 +12,11 @@ java.toolchain {
 
 repositories {
     mavenCentral() // for bending-api releases
-    maven("https://oss.sonatype.org/content/repositories/snapshots/") // for bending-api snapshots
+    maven("https://central.sonatype.com/repository/maven-snapshots/") // for bending-api snapshots
 }
 
 dependencies {
-    compileOnly("me.moros", "bending-api", "3.12.0-SNAPSHOT")
+    compileOnly("me.moros", "bending-api", "3.12.0")
     compileOnly("org.spongepowered", "configurate-core", "4.2.0")
     implementation("io.prometheus", "prometheus-metrics-core", "1.3.6")
     implementation("io.prometheus", "prometheus-metrics-exporter-httpserver", "1.3.6") {
