@@ -1,13 +1,13 @@
 plugins {
     java
-    id("com.gradleup.shadow").version("9.3.0")
+    id("com.gradleup.shadow").version("9.4.2")
 }
 
 group = "me.moros"
-version = "1.0.0"
+version = "1.1.0"
 
 java.toolchain {
-    languageVersion.set(JavaLanguageVersion.of(21))
+    languageVersion.set(JavaLanguageVersion.of(25))
 }
 
 repositories {
@@ -16,10 +16,10 @@ repositories {
 }
 
 dependencies {
-    compileOnly("me.moros", "bending-api", "3.15.0")
-    compileOnly("org.spongepowered", "configurate-core", "4.2.0")
-    implementation("io.prometheus", "prometheus-metrics-core", "1.4.3")
-    implementation("io.prometheus", "prometheus-metrics-exporter-httpserver", "1.4.3") {
+    compileOnly("me.moros:bending-api:3.16.0")
+    compileOnly("org.spongepowered:configurate-core:4.2.0")
+    implementation("io.prometheus:prometheus-metrics-core:1.8.0")
+    implementation("io.prometheus:prometheus-metrics-exporter-httpserver:1.8.0") {
         exclude(module = "prometheus-metrics-exposition-formats")
     }
 }
@@ -27,7 +27,6 @@ dependencies {
 tasks {
     shadowJar {
         archiveClassifier = ""
-        archiveBaseName = project.name
         val licenseName = "LICENSE_${rootProject.name.uppercase()}"
         from("$rootDir/LICENSE") {
             into("META-INF")
